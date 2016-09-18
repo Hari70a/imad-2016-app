@@ -3,7 +3,20 @@ body {
     background-color: lightgrey;
     margin-top: 75px;
 }
-
+.main-container{
+	margin:0 auto;
+	width:300px;
+	height:290px;
+}	
+.text-container{
+	margin:0 auto;	
+	width:190px;	
+	background-color:red;
+	padding:15
+}	
+.font-color{
+	color:#fff
+}	
 .center {
     text-align: center;
 }
