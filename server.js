@@ -77,19 +77,14 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-console.log(req,"$$$$$")
   //articleName = article_one
   //articles[articleName] = {}content obj for article-1
   var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article_two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article_three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 app.get('/ui/style.css', function (req, res) {
