@@ -8,5 +8,5 @@ submit.onclick=function(){
     console.log(counter,"####")
     var span = document.getElementById('span')
     console.log(span,"##########%%%%%")
-    span.innnerHTML = counter.toString();
+    span.innnerHTML = "Yes";
 };
