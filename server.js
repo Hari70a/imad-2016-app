@@ -72,12 +72,23 @@ function createTemplate(data){
     ` ;
     return htmlTemplate;
 }
+app.get('/submit_name', function (req, res) {
+  console.log(req,"request");
+  var name = req.query.name;
+  names.push(name)
+  res.send(JSON.stringify(names));
+});
+
 var counter =0;
 
 app.get('/counter', function (req, res) {
+  console.log(counter,"$$$$");
   counter=counter+1;
   res.send(counter.toString());
 });
+
+var names =[];
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
