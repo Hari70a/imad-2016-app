@@ -21,7 +21,7 @@ submit_name.onclick=function(){
         }
     }
     //make the request
-    request.open('GET','http://localhost:8080/submit_name?name='+nameInput,true)
+    request.open('GET','http://hari70a.imad.hasura-app.io/submit_name?name='+nameInput,true)
     request.send(null);
 };
 var submit = document.getElementById('submit_btn')
@@ -41,7 +41,7 @@ submit.onclick=function(){
         }
     }
     //make the request
-    request.open('GET','http://localhost:8080/counter',true)
+    request.open('GET','http://hari70a.imad.hasura-app.io/counter',true)
     request.send(null);
     
 };
