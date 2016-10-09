@@ -7,5 +7,6 @@ submit.onclick=function(){
     counter=counter+1;
     console.log(counter,"####")
     var span = document.getElementById('span')
+    console.log(span,"##########%%%%%")
     span.innnerHTML = counter.toString();
 };
