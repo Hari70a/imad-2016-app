@@ -10,5 +10,4 @@ submit.onclick=function(){
         }
     }
     var span = document.getElementById('span')
-    span.innerHTML = counter.toString();
 };
