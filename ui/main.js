@@ -9,7 +9,12 @@ submit.onclick=function(){
         console.log(request,"###")
         if(request.readyState===XMLHttpRequest.DONE){
              console.log(request,"###")
+             if(request.status === 200){
+                
+                var span = document.getElementById('span')
+
+             }
         }
     }
-    var span = document.getElementById('span')
+    
 };
