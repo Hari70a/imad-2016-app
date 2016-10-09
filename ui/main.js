@@ -8,3 +8,8 @@ function shiftImageRight(){
 image.onclick=function(){
     setInterval(shiftImageRight,50)
 };
+var submit = document.getElementById('submit_btn')
+var counter =0;
+submit.onclick=function(){
+    counter= counter+1;
+};
