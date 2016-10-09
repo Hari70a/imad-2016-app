@@ -31,4 +31,11 @@ body {
 .img-medium {
     height: 200px;
 }
+.container{
+    margin:0 auto 0px;
+    max-width:800px;
+    color:gray;
+    font-family:sans-serif;
+    padding-top:60px;
+}
 
