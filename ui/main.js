@@ -6,5 +6,5 @@ submit.onclick=function(){
     console.log("INN")
     counter=counter+1;
     var span = document.getElementById('span')
-    span.value = counter.toString();
+    span.innnerHTML = counter.toString();
 };
