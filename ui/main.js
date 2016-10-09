@@ -5,6 +5,7 @@ var counter =0;
 submit.onclick=function(){
     console.log("INN")
     counter=counter+1;
+    console.log(counter,"####")
     var span = document.getElementById('span')
     span.innnerHTML = counter.toString();
 };
