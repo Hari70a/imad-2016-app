@@ -10,7 +10,7 @@ submit.onclick=function(){
         if(request.readyState===XMLHttpRequest.DONE){
              console.log(request,"###")
              if(request.status === 200){
-                var counter = request.responseText
+                var counter = request.responseText;
                 var span = document.getElementById('span')
                 span.innerHTML = counter.toString();             
                  
