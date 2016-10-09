@@ -77,6 +77,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
+console.log(req,"$$$$$")
   //articleName = article_one
   //articles[articleName] = {}content obj for article-1
   var articleName=req.params.articleName;
