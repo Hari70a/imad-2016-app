@@ -1,3 +1,5 @@
 console.log('Loaded!');
-var element = document.getElementById('main-text');
-element.innerHTML="Hi I am Client side Javascript";
+var image = document.getElementById('madi');
+image.onclick=function(){
+    image.style.marginLeft='100px';
+}
