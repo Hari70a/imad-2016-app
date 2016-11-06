@@ -1,6 +1,6 @@
 <?php
 include('db.php');
- 
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
