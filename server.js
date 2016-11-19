@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 // create the pool somewhere globally so its lifetime
 // lasts for as long as your app is running
 var pool = new Pool(config)
-app.get('/hari-db',function(req, res){
+app.get('/db-mine',function(req, res){
   //make select request
   //return aresponse with results
   console.log(res)
