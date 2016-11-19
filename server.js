@@ -100,8 +100,8 @@ app.get('/test-db',function(req, res){
     }else{
         results.send(JSON.stringify(results))
     }
-  })
-})
+  });
+});
 var counter =0;
 
 app.get('/counter', function (req, res) {
