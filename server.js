@@ -12,7 +12,22 @@ var config={
 }
 var app = express();
 app.use(morgan('combined'));
-
+// create the pool somewhere globally so its lifetime
+// lasts for as long as your app is running
+var pool = new Pool(config)
+app.get('/hari-db',function(req, res){
+  //make select request
+  //return aresponse with results
+  console.log(res)
+  pool.query('SELECT * FROM product', function(err,results) {
+    console.log(err,results)
+    if (err){
+        res.status(500).send(err.toString());
+    }else{
+        results.send(JSON.stringify(results))
+    }
+  });
+});
 var articles={
 'article_one' :{
     title:'Article-one | Hariraj',
@@ -86,22 +101,6 @@ app.get('/submit_name', function (req, res) {
   res.send(JSON.stringify(names));
 });
 
-// create the pool somewhere globally so its lifetime
-// lasts for as long as your app is running
-var pool = new Pool(config)
-app.get('/hari-db',function(req, res){
-  //make select request
-  //return aresponse with results
-  console.log(res)
-  pool.query('SELECT * FROM product', function(err,results) {
-    console.log(err,results)
-    if (err){
-        res.status(500).send(err.toString());
-    }else{
-        results.send(JSON.stringify(results))
-    }
-  });
-});
 var counter =0;
 
 app.get('/counter', function (req, res) {
