@@ -2,7 +2,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var Pool = require('pg').Pool;
+var config={
+    user: 'hari70a',
+    database: 'hari70a',
+    host: 'http://db.imad.hasura-app.io/',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+}
 var app = express();
 app.use(morgan('combined'));
 
@@ -79,6 +86,22 @@ app.get('/submit_name', function (req, res) {
   res.send(JSON.stringify(names));
 });
 
+// create the pool somewhere globally so its lifetime
+// lasts for as long as your app is running
+var pool = new Pool(config)
+app.get('/test-db',function(req, res){
+  //make select request
+  //return aresponse with results
+  console.log(res)
+  pool.query('SELECT * FROM test', function(err,results) {
+    console.log(err,results,"%^%^&&")
+    if (err){
+        res.status(500).send(err.toString());
+    }else{
+        results.send(JSON.stringify(results))
+    }
+  })
+})
 var counter =0;
 
 app.get('/counter', function (req, res) {
