@@ -94,7 +94,7 @@ app.get('/test-db',function(req, res){
   //return aresponse with results
   console.log(res)
   pool.query('SELECT * FROM test', function(err,results) {
-    console.log(err,results,"%^%^&&")
+    console.log(err,results)
     if (err){
         res.status(500).send(err.toString());
     }else{
