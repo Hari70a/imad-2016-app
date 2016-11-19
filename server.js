@@ -89,11 +89,11 @@ app.get('/submit_name', function (req, res) {
 // create the pool somewhere globally so its lifetime
 // lasts for as long as your app is running
 var pool = new Pool(config)
-app.get('/test-db',function(req, res){
+app.get('/hari-db',function(req, res){
   //make select request
   //return aresponse with results
   console.log(res)
-  pool.query('SELECT * FROM user', function(err,results) {
+  pool.query('SELECT * FROM test', function(err,results) {
     console.log(err,results)
     if (err){
         res.status(500).send(err.toString());
