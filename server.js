@@ -13,22 +13,7 @@ var config={
 }
 var app = express();
 app.use(morgan('combined'));
-// // create the pool somewhere globally so its lifetime
-// // lasts for as long as your app is running
-// var pool = new Pool(config)
-// app.get('/db-mine',function(req, res){
-//   //make select request
-//   //return aresponse with results
-//   console.log(res)
-//   pool.query('SELECT * FROM product', function(err,results) {
-//     console.log(err,results)
-//     if (err){
-//         res.status(500).send(err.toString());
-//     }else{
-//         results.send(JSON.stringify(results))
-//     }
-//   });
-// });
+
 var articles={
 'article_one' :{
     title:'Article-one | Hariraj',
@@ -107,7 +92,7 @@ app.get('/test-db', function (req, res) {
     if(err){
       res.status(500).send(err.toString());
     }else{
-      res.send(JSON.stringify(result.rows))
+      res.send(JSON.stringify(result))
     }
   });
 });
@@ -134,7 +119,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-// app.get('/:articleName', function (req, res) {
+// app.get('/articles/:articleName', function (req, res) {
 //   //articleName = article_one
 //   //articles[articleName] = {}content obj for article-1
 //   var articleName=req.params.articleName;
