@@ -3,6 +3,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+<<<<<<< HEAD
 
 var config = {
   host: 'db.imad.hasura-app.io',
@@ -12,9 +13,33 @@ var config = {
   database: 'db-hari70a-82351',
 };
 
+=======
+var config={
+    user: 'hari70a',
+    database: 'hari70a',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+}
+>>>>>>> bbe7885452e4611f73f60d2f8cbbb455ed43df7e
 var app = express();
 app.use(morgan('combined'));
-
+// create the pool somewhere globally so its lifetime
+// lasts for as long as your app is running
+var pool = new Pool(config)
+app.get('/db-mine',function(req, res){
+  //make select request
+  //return aresponse with results
+  console.log(res)
+  pool.query('SELECT * FROM product', function(err,results) {
+    console.log(err,results)
+    if (err){
+        res.status(500).send(err.toString());
+    }else{
+        results.send(JSON.stringify(results))
+    }
+  });
+});
 var articles={
 'article_one' :{
     title:'Article-one | Hariraj',
@@ -118,24 +143,27 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName', function (req, res) {
-  //articleName = article_one
-  //articles[articleName] = {}content obj for article-1
-  var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
-});
+// app.get('/:articleName', function (req, res) {
+//   //articleName = article_one
+//   //articles[articleName] = {}content obj for article-1
+//   var articleName=req.params.articleName;
+//   res.send(createTemplate(articles[articleName]));
+// });
 
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
+// app.get('/ui/main.js', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+// });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
+// app.get('/ui/style.css', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+// });
 
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
+// app.get('/ui/madi.png', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+// });
+// app.get('/favicon.ico', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+// });
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
