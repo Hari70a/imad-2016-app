@@ -23,25 +23,28 @@
       <div class="signup_main_container">
         <div class="signup_text_container">
           <p style="letter-spacing:3px;color:#555555;font-family: fontawesome;font-size: 25px;">Sign Up</p>
-        </div> 
-        <div>
-          <div class="input_container" style="margin-top:30px">
-            <input type= 'email' class="input_style" placeholder='Email' id='email' value=''/>
-          </div> 
-          <div class="input_container"> 
-            <input type= 'text' class="input_style" placeholder='Name' id='username'/>
-          </div>
-          <div class="input_container">   
-            <input type= 'password' class="input_style" placeholder='Password' id='password'/>
-          </div>
-          <div class="input_container">   
-            <input type= 'password' class="input_style"  placeholder='Confirm password' id='confirm_pwd'/>
-          </div>
-          <div class="input_container" style="margin-top:25px;">
-            <button id="signup_btn" class="button_style" onclick="signUpUser()">Sign up</button>
-          </div>
-          <p id ='welcome_msg'><p>
-        </div>  
+        </div>
+        <form>
+            <div>
+              <div class="input_container" style="margin-top:30px">
+                <input type= 'email' class="input_style" placeholder='Email' id='email' value='' required/>
+              </div> 
+              <div class="input_container"> 
+                <input type= 'text' class="input_style" placeholder='Name' id='username' required/>
+              </div>
+              <div class="input_container">   
+                <input type= 'password' class="input_style" placeholder='Password' id='password' required/>
+              </div>
+              <div class="input_container">   
+                <input type= 'password' class="input_style"  placeholder='Confirm password' id='confirm_pwd' required/>
+              </div>
+              <div class="input_container" style="margin-top:25px;">
+                <button id="signup_btn" class="button_style" onclick="signUpUser()">Sign up</button>
+              </div>
+              <p id ='welcome_msg'><p>
+            </div> 
+        </form>
+          
       </div>
     </center>  
   </body>
