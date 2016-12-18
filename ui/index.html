@@ -1,44 +1,28 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
   <head>
-    <link href="/ui/style.css" rel="stylesheet" />
     <title>Fascinating Blogs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="ui/css/main.css" />
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link href="/ui/style.css" rel="stylesheet" />
   </head>
-
-  <body>
-    <div class='container'>
-      <div  class ="main-container">
-        <div class ="center">
-          <img id="madi_img" src="/ui/madi.png" style = "background-color:white" class="img-medium"/>
-          <div class ="text-container" >
-            <p class ="center font-color">Hariraj</p>
-          </div>
-          <span style ="color:green">Developer</span>
+  <body style=>
+    <div id="main">
+      <div class="blog-header-container">
+        <p class="blog-header">Fascinating blogs</p>
+        <div class="link_container">
+          <ul style="list-style: none;margin:0 auto;">  
+            <li class="list-item"><a href="/login.html" style="text-decoration: none;">Sign in </a></li>
+            <li class="list-item"><a href="/signup.html" style="text-decoration: none;">Register </li>
+          </ul>
         </div>
-      </div>  
-      <div>
-          <h3>Personal</h3>
-          <p>Loves Js</p>
-          <hr/>
       </div>
-      <div>
-          <h3>Professional</h3>
-          <p>I am a student</p>
-          <hr/>
-      </div>
-      <div class="footer">
-        <input type='submit' value='Click me' id='submit_btn'/>
-        This button <input type='submit' id='submit_btn' value='Click me' />has been clicked <span id ='span'>0</span> times
-        
-      </div>
-      <hr/>
-      <div>
-        <input type='text' id='name' placeholder ="Name"/>
-        <input type='submit' value='Submit' id='submit_name'/>
-        <ul id ="unorderlist">
-        </ul>
-      </div>    
     </div>
-    <script src ='/ui/main.js'></script>
   </body>
 </html>

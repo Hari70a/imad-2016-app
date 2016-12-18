@@ -125,11 +125,20 @@ app.get('/', function (req, res) {
 //   var articleName=req.params.articleName;
 //   res.send(createTemplate(articles[articleName]));
 // });
-
+app.get('/login.html', function (req, res) {
+  console.log('test');
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
+app.get('/signup.html', function (req, res) {
+  console.log('test');
+  res.sendFile(path.join(__dirname, 'ui', 'signup.html'));
+});
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-
+app.get('/ui/signup.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'signup.js'));
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });

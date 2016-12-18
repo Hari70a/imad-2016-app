@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div style="margin:0px auto">
+      <div style="margin:0px auto">
+        <label>Email: </label>
+        <input type= 'email'/>
+      </div> <br/>
+      <div>   
+        <label>Password: </label>
+        <input type= 'password'/>
+      </div>  <br/>
+      <div>   
+        <input type= 'button' value='Sign in '/>
+      </div>  <br/>
+    </div>  
+  </body>
+</html>   -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <link href="/ui/style.css" rel="stylesheet" />
+    <link href="/ui/reponsive .css" rel="stylesheet" />   
+    <script>
+      function signUpUser(){
+        var email = document.getElementById('email').value;
+        var name = document.getElementById('username').value;
+        console.log(name);
+        var text ='Welcome to fascinating blogs,'+name+'.You have been signed up successfully'
+        var welcomeMsg = document.getElementById('welcome_msg')
+        welcomeMsg.innerHTML = text;
+        console.log('test');
+      }
+    </script>
+  </head>
+  <body style='margin-top:60px;'>
+    <center>
+      <div class="signin_main_container">
+        <div class="signup_text_container">
+          <p style="letter-spacing:3px;color:#555555;font-family: fontawesome;font-size: 25px;">Sign In</p>
+        </div> 
+        <div>
+          <div class="input_container" style="margin-top:30px">
+            <input type= 'email' class="input_style" placeholder='Email' id='email' value=''/>
+          </div> 
+          <div class="input_container">   
+            <input type= 'password' class="input_style" placeholder='Password' id='password'/>
+          </div>
+          <div class="input_container" style="margin-top:25px;">
+            <button id="signup_btn" class="button_style" onclick="signUpUser()">Sign in</button>
+          </div>
+          <p id ='welcome_msg'><p>
+        </div>  
+      </div>
+    </center>  
+  </body>
+</html>  

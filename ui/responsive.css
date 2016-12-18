@@ -1,0 +1,15 @@
+@media (min-width: 320px) and (max-width: 414px){
+  .signup_main_container{
+    width:450px;
+    height:450px;
+  }
+  .signin_main_container{
+    width:450px;
+    height:380px;
+  }
+}
+@media (min-width: 320px) and (max-width: 768px){
+  .link_container{
+    display:none;
+  }
+}  

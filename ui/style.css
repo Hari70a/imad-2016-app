@@ -1,8 +1,6 @@
-body {
+/*body {
     font-family: sans-serif;
-    background-color: lightgrey;
-    margin-top: 60px;
-}
+}*/
 .main-container{
 	margin:0 auto;
 	width:300px;
@@ -17,23 +15,100 @@ body {
 	color:#fff
 }	
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .text-big {
-    font-size: 300%;
+  font-size: 300%;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
-
+.blog-header-container{
+  position: relative;
+  background-color: #F68972;      
+  height: 68px;
+  padding-top: 20px;
+  line-height: 50px;
+  overflow: hidden;
+  z-index: 2;
+}
+.blog-header{
+  font-family: fontawesome;
+  text-decoration: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 37px;
+  letter-spacing: 3px;
+  color: #555555;
+  display: block;
+  position: absolute;
+  top: 17px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.list-item{
+  float: left;
+  display:block;
+  margin-right:20px;
+  padding-left:20px;
+  padding-right:20px;
+  border-color:blue;
+  border-width: 10px;
+}
+.link_container{
+  float: right!important;
+  display:block;
+}
+.list-item:hover{
+  background-color:orange;
+  border-radius: 30px;
+}
 .img-medium {
     height: 200px;
 }
-.container{
-    margin:0 auto 0px;
-    max-width:800px;
-    font-family:sans-serif;
+.container {
+  margin:0 auto 0px;
+  max-width:800px;
+  font-family:sans-serif;
 }
+.signin_main_container{
+  background-color:green;
+  width:500px;
+  height:380px;
+}
+.signup_main_container{
+  background-color:green;
+  width:500px;
+  height:490px;
+}    
+.button_style {
+  width: 110px;
+  height: 50px;
+  background-color:orange;
+  border-color:transparent;
+  font-size:20px;
+  font-family: fontawesome;
+  color:#fff;
+  cursor:pointer     
+}
+.signup_text_container{
+  margin:0 auto;
+  background-color:#F68972;
+  padding-top: 1px;
+  padding-bottom:3px;
+  height: 68px;
+}
+.input_style {
+  height:30px;
+  width:400px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+.input_container {
+  padding-top:25px;
+}
+
 
