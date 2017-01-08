@@ -41,7 +41,7 @@ submit.onclick=function(){
         }
     }
     //make the request
-    request.open('GET','http://hari70a.imad.hasura-app.io/counter',true)
+    request.open('GET','http://localhost:8080/counter',true)
     request.send(null);
     
 };

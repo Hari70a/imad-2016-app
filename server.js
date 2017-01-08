@@ -3,16 +3,20 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 var config={
-    user: 'hari70a',
-    database: 'hari70a',
-    host: 'db.imad.hasura-app.io',
-    port: '5432',
-    password: process.env.DB_PASSWORD
+  user: 'hari70a',
+  database: 'hari70a',
+  host: 'db.imad.hasura-app.io',
+  port: '5432',
+  password: process.env.DB_PASSWORD
 }
 var app = express();
 app.use(morgan('combined'));
+app.use(express.static('public'));
 
 var articles={
 'article_one' :{
@@ -126,9 +130,19 @@ app.get('/', function (req, res) {
 //   res.send(createTemplate(articles[articleName]));
 // });
 app.get('/login.html', function (req, res) {
-  console.log('test');
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
+app.get('/header.html', function (req, res) {
+  console.log('test');
+  res.sendFile(path.join(__dirname, 'ui', 'header.html'));
+});
+app.get('/header_menu.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'header_menu.html'));
+});
+app.get('/side_menu.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'side_menu.html'));
+});
+
 app.get('/signup.html', function (req, res) {
   console.log('test');
   res.sendFile(path.join(__dirname, 'ui', 'signup.html'));
@@ -146,9 +160,23 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-// app.get('/favicon.ico', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-// });
+app.post('/process_post',urlencodedParser, function (req, res) {
+   // Prepare output in JSON format
+   response = {
+      email:req.body.email,
+      password:req.body.password
+   };
+   console.log(response);
+   res.end(JSON.stringify(response));
+})
+
+app.post('/create_user', function(req, res) {
+  res.send('You sent the name "' + req.body.name + '".');
+});
+
+app.get('/favicon.ico', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','blog.jpeg'));
+});
 
 
 var port = 8080; 

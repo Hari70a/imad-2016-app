@@ -1,6 +1,44 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link rel="import" href="/header.html">
+    <title>Sign up | Fascinating Blogs</title>
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div id="header_menu"></div>
+      <!-- Main -->
+        <center>
+          <div id="main" style="width:700px;height:450px;margin-top: 50px;">
+            <!-- Post -->
+            <article class="post">
+              <div class="login-header" >
+                <h1 title="login" >Sign Up</h1>
+                <div class="login-form">
+                  <form  name="signupform" id="signupform" method="post" action="/create_user">
+                    <input type="text" name="username" placeholder="Username" value="" />
+                    <br /><br />
+                    <input type="text" name="email" placeholder="Email" value=""/>
+                    <br /><br />
+                    <input type="password" name="password" placeholder="Passowrd" value="" />
+                    <br /><br />
+                    <input type="password" name="confirm_password" placeholder="Confirm Passowrd" value="" />
+                    <br /><br />
+                    <input title="login" type="submit" name="btn_submit" value="Sign Up" />
+                  </form>
+                </div>
+              </div>
+            </article>
+          </div>
+        </center>  
+      </div>   
+    </div>
+  </body>
+</html>
+<!-- <!DOCTYPE HTML>
+<html>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <link href="/ui/style.css" rel="stylesheet" />
@@ -24,7 +62,7 @@
         <div class="signup_text_container">
           <p style="letter-spacing:3px;color:#555555;font-family: fontawesome;font-size: 25px;">Sign Up</p>
         </div>
-        <form>
+        <form action="" name="signup">
             <div>
               <div class="input_container" style="margin-top:30px">
                 <input type= 'email' class="input_style" placeholder='Email' id='email' value='' required/>
@@ -48,4 +86,4 @@
       </div>
     </center>  
   </body>
-</html>  
+</html> -->  
